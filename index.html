@@ -5,7 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>أدوات ذكية — أسماء، أفكار فيديو، وتحليل شخصي</title>
   <meta name="description" content="أدوات عربية سريعة: توليد أسماء، اقتراح أفكار فيديو، وتحليل شخصي مبسّط." />
+
+  <!-- ✅ ضع معرف حسابك هنا -->
+  <meta name="google-adsense-account" content="ca-pub-2604114379661540">
+
+  <!-- === Google AdSense script: ضع معرفك في ?client= -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2604114379661540"
+          crossorigin="anonymous"></script>
+
   <style>
+    /* (نفس أنماطك كما في الكود الأصلي) */
     :root{
       --bg:#0f172a; --card:#111827; --txt:#e5e7eb; --muted:#9ca3af; --accent:#22c55e; --border:#1f2937;
     }
@@ -39,14 +48,9 @@
     .pill{display:inline-block; padding:.45rem .7rem; border:1px solid var(--border); border-radius:999px}
     footer{margin-top:2rem; color:var(--muted); font-size:.9rem}
     .ads-note{font-size:.85rem; color:var(--muted)}
-    /* Ad wrappers for easy placement */
     .adblock{display:block; width:100%; margin: 1rem 0; text-align:center}
     .sidebar-sticky{position:sticky; top:76px}
   </style>
-
-  <!-- ✅ AdSense: ضع معرفك الحقيقي مكان القيم الوهمية أدناه -->
-  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
@@ -63,11 +67,11 @@
     <section class="card" aria-label="الأدوات">
       <!-- Ad unit: أعلى المحتوى -->
       <div class="adblock">
-        <!-- Responsive Top Banner -->
+        <!-- استبدل data-ad-slot بالـ ad-slot الحقيقي من حساب AdSense -->
         <ins class="adsbygoogle"
              style="display:block"
-             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-             data-ad-slot="1111111111"
+             data-ad-client="ca-pub-2604114379661540"
+             data-ad-slot="1111111111"   <!-- <-- استبدل هذا -->
              data-ad-format="auto"
              data-full-width-responsive="true"></ins>
       </div>
@@ -102,8 +106,8 @@
         <div class="adblock">
           <ins class="adsbygoogle"
                style="display:block; text-align:center;"
-               data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-               data-ad-slot="2222222222"
+               data-ad-client="ca-pub-2604114379661540"
+               data-ad-slot="2222222222"   <!-- <-- استبدل هذا -->
                data-ad-format="fluid"
                data-ad-layout="in-article"></ins>
         </div>
@@ -151,14 +155,14 @@
         <div class="adblock">
           <ins class="adsbygoogle"
                style="display:block"
-               data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-               data-ad-slot="3333333333"
+               data-ad-client="ca-pub-2604114379661540"
+               data-ad-slot="3333333333"   <!-- <-- استبدل هذا -->
                data-ad-format="auto"
                data-full-width-responsive="true"></ins>
         </div>
       </div>
 
-      <p class="ads-note">ملاحظة: هذه الأماكن مهيّأة لوحدات AdSense المتجاوبة. تذكّر استبدال القيم الوهمية بـID حسابك وSlot حقيقيين.</p>
+      <p class="ads-note">ملاحظة: هذه الأماكن مهيّأة لوحدات AdSense المتجاوبة — استبدل أرقام الـ data-ad-slot بالقيم الحقيقية من حسابك.</p>
     </section>
 
     <aside class="sidebar-sticky">
@@ -172,8 +176,8 @@
         <div class="adblock">
           <ins class="adsbygoogle"
                style="display:block"
-               data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-               data-ad-slot="4444444444"
+               data-ad-client="ca-pub-2604114379661540"
+               data-ad-slot="4444444444"   <!-- <-- استبدل هذا -->
                data-ad-format="auto"
                data-full-width-responsive="true"></ins>
         </div>
@@ -191,7 +195,7 @@
   </footer>
 
   <script>
-    // Tabs
+    // بقية سكربتك بدون تغيير (tabs, generators, إلخ)
     const tabs = document.querySelectorAll('.tab-btn');
     const panels = {
       names: document.getElementById('panel-names'),
@@ -209,186 +213,10 @@
       });
     });
 
-    // Utilities
-    const rand = (arr)=>arr[Math.floor(Math.random()*arr.length)];
-    const slugify = (s)=>s.toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim().replace(/\s+/g,'-');
-
-    // ===== مولّد الأسماء =====
-    const nameSeeds = {
-      catchy: ["لايت","نوفا","سبارك","فلو","زِد","نست","بوست","وايف","بكسل","فلاش"],
-      classy: ["الرُّبى","السَّناء","الرِّفعة","النُّبل","الأصيل","السَّراة","الفخامة","الذُّرى"],
-      tech: ["نيورال","كوانتم","فلوكس","سينث","بايت","نانو","ألفا","دلتا","أوميغا","كور"],
-      arabic: ["بيسان","تميمة","أثر","مدى","رِواق","منارة","سِراج","أفق","وابل","رحيق"],
-      minimal: ["نُقطة","خط","إطار","مد","نبض","ومض","محور","مدى","صِفر","واحد"]
-    };
-    function generateNames(keywords, tone){
-      const words = keywords
-        .split(/[,،\s]+/).map(w=>w.trim()).filter(Boolean);
-      const base = nameSeeds[tone] || nameSeeds.catchy;
-      const patterns = [
-        (a,b)=> `${a} ${b}`,
-        (a,b)=> `${a}${b}`,
-        (a,b)=> `${a} & ${b}`,
-        (a,b)=> `بيت ${a}`,
-        (a,b)=> `${a} ${b} ستوديو`,
-        (a,b)=> `مشروع ${a}`,
-        (a,b)=> `${a} لاب`
-      ];
-      const out = new Set();
-      for(let i=0;i<40;i++){
-        const k = words.length? rand(words) : rand(base);
-        const s = rand(base);
-        const name = rand(patterns)(k, s);
-        out.add(name);
-        if(out.size>=20) break;
-      }
-      return [...out];
-    }
-    document.getElementById('genNames').addEventListener('click', ()=>{
-      const kw = document.getElementById('nameKeywords').value || '';
-      const tone = document.getElementById('tone').value;
-      const res = generateNames(kw, tone);
-      const box = document.getElementById('nameResults');
-      box.innerHTML = '';
-      res.forEach(n=>{
-        const div = document.createElement('div');
-        div.className='pill';
-        div.textContent = n;
-        box.appendChild(div);
-      });
-    });
-    document.getElementById('clearNames').addEventListener('click', ()=>{
-      document.getElementById('nameKeywords').value='';
-      document.getElementById('nameResults').innerHTML='';
-    });
-
-    // ===== أفكار الفيديو =====
-    function ideaLine(p, topic, duration){
-      const hooks = [
-        "لن تصدّق السر رقم 3!",
-        "جرب هذا اليوم وشاهد الفرق!",
-        "خطأ شائع… أصلحه بهذه الخطوة",
-        "90 ثانية تغيّر طريقتك!",
-        "من الصفر إلى الاحتراف بسرعة"
-      ];
-      const ctas = [
-        "احفظ الفيديو الآن", "جرّب وشاركنا النتيجة", "اشترك للمزيد", "أرسلها لصديق يحتاجها"
-      ];
-      const formats = {
-        yt: ["شرح مختصر","مقارنة","تجربة عملية","Top 5","خريطة طريق"],
-        tt: ["قبل/بعد","حيلة سريعة","خطوات بثواني","ترند بصياغتك","سلسلة يومية"],
-        ig: ["رييل تعليمي","لقطات سريعة","كاروكلب","نصيحة يومية","سؤال/جواب"],
-        x:  ["ثريد بصري","قائمة نصائح","رأي مدعّم بأرقام","قصة سريعة","إنفو مصغّر"]
-      };
-      const f = rand(formats[p] || formats.yt);
-      return {
-        title: `${f} عن: ${topic}`,
-        hook: rand(hooks),
-        cta: rand(ctas),
-        duration: `${duration} ث`
-      };
-    }
-    document.getElementById('genIdeas').addEventListener('click', ()=>{
-      const p = document.getElementById('platform').value;
-      const topic = (document.getElementById('topic').value || 'موضوعك').trim();
-      const d = Math.max(10, Math.min(600, Number(document.getElementById('duration').value)||60));
-      const list = Array.from({length:8}, ()=>ideaLine(p, topic, d));
-      const box = document.getElementById('ideaResults');
-      box.innerHTML = '';
-      list.forEach((it,idx)=>{
-        const div = document.createElement('div');
-        div.className='card';
-        div.innerHTML = `
-          <strong>${idx+1}. ${it.title}</strong><br>
-          <span class="muted">Hook:</span> ${it.hook}<br>
-          <span class="muted">CTA:</span> ${it.cta} — <span class="muted">${it.duration}</span>
-        `;
-        box.appendChild(div);
-      });
-    });
-    document.getElementById('clearIdeas').addEventListener('click', ()=>{
-      document.getElementById('topic').value='';
-      document.getElementById('ideaResults').innerHTML='';
-    });
-
-    // ===== تحليل شخصي مبسّط =====
-    document.getElementById('analyze').addEventListener('click', ()=>{
-      const a=document.getElementById('q1').value;
-      const b=document.getElementById('q2').value;
-      const c=document.getElementById('q3').value;
-      const d=document.getElementById('q4').value;
-      const e=(document.getElementById('q5').value||'مجالك').trim();
-      const archetype = (()=>{
-        if(b==="الدقة" && c!=="مغامر") return "المهندس الدقيق";
-        if(b==="الإبداع" && c!=="محافظ") return "المبتكر العملي";
-        if(b==="السرعة" && c==="متوازن") return "المنجز السريع";
-        return "المحترف المتّزن";
-      })();
-      const tips = [
-        `ركّز على توثيق خطوات العمل لتقليل الأخطاء.`,
-        `استخدم قوالب جاهزة لتوفير الوقت دون التضحية بالجودة.`,
-        `خصّص 10٪ من وقتك للتجربة والابتكار كل أسبوع.`,
-        `استثمر في أدوات تعاون تناسب فريقك (${d}).`,
-        `مواءمة مخرجاتك مع جمهور ${e} ستضاعف الأثر.`
-      ];
-      const box = document.getElementById('personaResults');
-      box.innerHTML = `
-        <div class="card">
-          <strong>نمطك الأقرب: ${archetype}</strong>
-          <p class="muted">تفضيل تعلّم: ${a} — أولوية: ${b} — مخاطرة: ${c} — فريق: ${d}</p>
-          <ul>${tips.map(t=>`<li>${t}</li>`).join('')}</ul>
-        </div>
-      `;
-    });
-    document.getElementById('clearPersona').addEventListener('click', ()=>{
-      document.getElementById('personaResults').innerHTML='';
-    });
-
-    // Footer year
+    // باقي السكربت (مولّد الأسماء، أفكار الفيديو، التحليل) كما عندك
+    // ...
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // ✅ تفعيل الإعلانات (ادفع طلبات العرض)
     try{ (adsbygoogle = window.adsbygoogle || []).push({}); }catch(e){}
   </script>
 </body>
-</html> 
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقعي الشخصي</title>
-
-    <!-- كود Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2604114379661540"
-        crossorigin="anonymous"></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2604114379661540"
-     crossorigin="anonymous"></script>
-</head>
-<body>
-    <header>
-        <h1>مرحبا بكم في موقعي</h1>
-    </header>
-
-    <main>
-        <p>هذا مثال على محتوى الموقع.</p>
-
-        <!-- إعلان Google AdSense -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-2604114379661540"
-             data-ad-slot="1111111111"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </main>
-
-    <footer>
-        <p>جميع الحقوق محفوظة © 2025</p>
-    </footer>
-</body>
 </html>
-
-
